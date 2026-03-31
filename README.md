@@ -1,6 +1,6 @@
 # 3D Render and attitude Viwer using ESP32
 
-Small Vite + Three.js viewer that tilts a GLB model from live sensor data. Firmware targets an ESP32-C6 with an MMA845X **3-axis accelerometer** (pitch/roll only; yaw stays 0).
+This project uses small Vite + Three.js viewer that tilts a GLB model from live sensor data. Firmware is ESP32-C6, and MMA845X **3-axis accelerometer** (pitch/roll only; yaw stays 0).
 
 ## Run the app
 
@@ -13,7 +13,7 @@ Drop models in `public/` as `rambling_wreck.glb` and/or `airplane.glb` (pick in 
 
 ## Feed data in (pick one)
 
-**USB + serial bridge (what we use most)**  
+**USB + serial bridge **  
 Flash `arduino_code/esp32_imu_serial/esp32_imu_serial.ino`, then:
 
 ```bash
@@ -27,6 +27,9 @@ If your board serves `pitch,roll,yaw` CSV on port 81, put its LAN IP in the UI a
 
 **No hardware**  
 `npm run ws:test` (port `8765`) or enable “Test motion” in the panel.
+
+**Hardware setup**
+The image for hardware setup is in `hardware/setup.png`. Vcc_in connects to 3.3V, GNG to ESP32's ground. GPIO 6 is SDA and GPIO 7 is SCL. Connect ESP32 to computer and upload code. 
 
 ## Notes
 
