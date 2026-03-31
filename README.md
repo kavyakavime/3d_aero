@@ -29,7 +29,7 @@ If your board serves `pitch,roll,yaw` CSV on port 81, put its LAN IP in the UI a
 `npm run ws:test` (port `8765`) or enable “Test motion” in the panel.
 
 **Hardware setup**
-The image for hardware setup is in `hardware/setup.png`. Vcc_in connects to 3.3V, GNG to ESP32's ground. GPIO 6 is SDA and GPIO 7 is SCL. Connect ESP32 to computer and upload code. 
+The image for hardware setup is in `hardware/setup.JPG`. Vcc_in connects to 3.3V, GNG to ESP32's ground. GPIO 6 is SDA and GPIO 7 is SCL. Connect ESP32 to computer and upload code. 
 
 ## Notes
 
