@@ -27,12 +27,10 @@
 static const int PIN_SDA = 6;
 static const int PIN_SCL = 7;
 static const uint8_t IMU_ADDR = 0x1C;
-
-// Mount / axis fixes (±1.0f). Change if your board is rotated vs the model.
+// Mount / axis fixes (plus of minus1.0f).
 static const float AX_SIGN = +1.0f;
 static const float AY_SIGN = +1.0f;
 static const float AZ_SIGN = +1.0f;
-
 static const uint8_t MMA_WHO_AM_I = 0x0D;
 static const uint8_t MMA_CTRL_REG1 = 0x2A;
 static const uint8_t MMA_XYZ_DATA_CFG = 0x0E;
@@ -49,14 +47,13 @@ float yawDeg = 0.0f;
 unsigned long lastSendMs = 0;
 unsigned long lastRetryMs = 0;
 
-// IIR on accelerometer (g) before tilt — higher = snappier, lower = smoother
+// IIR on accelerometer (g) before tilt— higher = snappier,lower= smoother
 static const float ACC_LP = 0.38f;
 static float fax = 0.0f;
 static float fay = 0.0f;
 static float faz = 0.0f;
 static bool accFiltInit = false;
-
-// Output smoothing (degrees on wire)
+// Output smoothing(degrees on wire)
 static const float OUT_LP = 0.20f;
 
 bool i2cProbe(uint8_t addr) {
@@ -98,7 +95,7 @@ bool initMma845x() {
   if (!imuWriteReg(MMA_CTRL_REG1, 0x00)) return false; // standby
   delay(10);
   if (!imuWriteReg(MMA_XYZ_DATA_CFG, 0x00)) return false; // ±2g
-  // 100 Hz DR, active (common stable setting)
+  // 100 Hz DR, active(common stable setting)
   if (!imuWriteReg(MMA_CTRL_REG1, 0x19)) return false;
   delay(10);
   return true;
@@ -157,7 +154,6 @@ void updateFromAccelOnly() {
 
   float rawMag = sqrtf(x * x + y * y + z * z);
   if (rawMag < 0.82f || rawMag > 1.18f) {
-    // Not ~1g — likely shake/translation; keep last pitch/roll
     return;
   }
 
