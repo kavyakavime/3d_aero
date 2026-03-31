@@ -1,4 +1,4 @@
-# 3D Aero
+# 3D Render and attitude Viwer using ESP32
 
 Small Vite + Three.js viewer that tilts a GLB model from live sensor data. Firmware targets an ESP32-C6 with an MMA845X **3-axis accelerometer** (pitch/roll only; yaw stays 0).
 
