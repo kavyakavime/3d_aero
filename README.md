@@ -1,6 +1,6 @@
 # 3D Render and attitude Viwer using ESP32
 
-This project uses small Vite + Three.js viewer that tilts a GLB model from live sensor data. Firmware is ESP32-C6, and MMA845X **3-axis accelerometer** (pitch/roll only; yaw stays 0).
+This project uses small Vite + Three.js viewer that tilts a GLB model from live sensor data. Firmware is ESP32-C6, and MMA845X **3-axis accelerometer** (pitch/roll only).
 
 ## Run the app
 
