@@ -31,7 +31,15 @@ If your board serves `pitch,roll,yaw` CSV on port 81, put its LAN IP in the UI a
 The image for hardware setup is in `hardware/setup.JPG`. Vcc_in connects to 3.3V, GNG to ESP32's ground. GPIO 6 is SDA and GPIO 7 is SCL. Connect ESP32 to computer and upload code. 
 
 **Results**
-Results, including the video, is in the `results` directory. 
+The results directory only shows the pictures of the renderings. Link for video:
+Rambling Wreck:  
+```
+https://drive.google.com/file/d/12UOh0tWQNU0-OsXlbATZGLG1WdNpKXCz/view?usp=sharing
+```
+Plane:
+```
+https://drive.google.com/file/d/1n62SrJby33t3vYYgOhSjP7cuDgLqzHXp/view?usp=sharing
+```
 
 ## Notes
 
